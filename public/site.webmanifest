@@ -1,0 +1,16 @@
+{
+  "name": "JCode",
+  "short_name": "JCode",
+  "description": "Digital Growth Partners - We build digital systems that drive measurable business growth.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B0F19",
+  "theme_color": "#3B82F6",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
