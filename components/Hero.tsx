@@ -127,7 +127,7 @@ export default function Hero() {
           animate="visible"
           className="mb-6"
         >
-          <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl lg:text-[6rem] font-display font-bold leading-[1.1]">
+          <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] font-display font-bold leading-[1.1]">
             <AnimatedText text="We Build Digital" className="block" />
             <motion.span
               variants={itemVariants}
@@ -142,7 +142,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-12"
+          className="text-lg sm:text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-8 md:mb-12"
         >
           From strategy to execution—we transform your digital presence into a{' '}
           <motion.span

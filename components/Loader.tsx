@@ -70,13 +70,13 @@ export default function Loader() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
           >
-            <motion.span
-              className="text-xl font-bold gradient-text"
-              animate={{ opacity: [0.5, 1, 0.5] }}
+            <motion.img
+              src="/logo.png"
+              alt="JCode Logo"
+              className="h-10 w-10 object-contain"
+              animate={{ opacity: [0.5, 1, 0.5], scale: [0.95, 1.05, 0.95] }}
               transition={{ duration: 1.5, repeat: Infinity }}
-            >
-              JC
-            </motion.span>
+            />
           </motion.div>
         </motion.div>
       )}

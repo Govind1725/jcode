@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { Star, Quote, ArrowRight } from 'lucide-react'
 
 const testimonials = [
@@ -30,6 +30,15 @@ const testimonials = [
 
 export default function Testimonials() {
   const ref = useRef(null)
+  const [isMobile, setIsMobile] = useState(true)
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'end start'],
@@ -39,7 +48,7 @@ export default function Testimonials() {
   const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0])
 
   return (
-    <section id="testimonials" className="py-32 relative overflow-hidden" ref={ref}>
+    <section id="testimonials" className="py-20 md:py-32 relative overflow-hidden" ref={ref}>
       <motion.div style={{ opacity }} className="max-w-7xl mx-auto px-6 relative">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -58,7 +67,7 @@ export default function Testimonials() {
             </span>
           </motion.div>
           
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mt-4 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold mt-4 mb-6">
             What Our{' '}
             <motion.span
               className="gradient-text"
@@ -89,7 +98,7 @@ export default function Testimonials() {
               transition={{ delay: index * 0.15, duration: 0.6 }}
               whileHover={{ y: -10, scale: 1.02 }}
               className="glass rounded-2xl p-8 relative group"
-              style={{ y }}
+              style={isMobile ? undefined : { y }}
             >
               <motion.div
                 className="absolute -top-4 -right-4 w-16 h-16"

@@ -157,7 +157,7 @@ export default function Services() {
   const isInView = useInView(ref, { once: true })
 
   return (
-    <section id="services" className="py-32 relative">
+    <section id="services" className="py-20 md:py-32 relative">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           ref={ref}
@@ -177,7 +177,7 @@ export default function Services() {
             </span>
           </motion.div>
           
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mt-4 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold mt-4 mb-6">
             Services Built for{' '}
             <motion.span
               className="gradient-text"

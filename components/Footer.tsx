@@ -17,10 +17,15 @@ export default function Footer() {
           <div className="md:col-span-2">
             <motion.a
               href="#"
-              className="text-3xl font-display font-bold gradient-text"
+              className="flex items-center gap-3 text-3xl font-display font-bold group"
               whileHover={{ scale: 1.05 }}
             >
-              JCode
+              <img
+                src="/logo.png"
+                alt="JCode Logo"
+                className="h-12 w-12 object-contain"
+              />
+              <span className="gradient-text">JCode</span>
             </motion.a>
             <p className="text-gray-400 mt-4 max-w-md">
               We build digital systems that drive measurable business growth. 

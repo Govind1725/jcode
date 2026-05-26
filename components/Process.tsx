@@ -44,7 +44,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="py-32 relative overflow-hidden">
+    <section id="process" className="py-20 md:py-32 relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-accent-purple/10 via-transparent to-transparent" />
       
       <div className="max-w-7xl mx-auto px-6 relative">
@@ -55,7 +55,7 @@ export default function Process() {
           className="text-center mb-16"
         >
           <span className="text-accent-cyan font-semibold uppercase tracking-widest">How We Work</span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold mt-4 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mt-4 mb-6">
             Our <span className="gradient-text">Process</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">

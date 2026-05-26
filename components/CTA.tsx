@@ -17,7 +17,7 @@ export default function CTA() {
   }
 
   return (
-    <section id="contact" className="py-32 relative overflow-hidden">
+    <section id="contact" className="py-20 md:py-32 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-accent-purple/5 to-background" />
       
       <div className="max-w-4xl mx-auto px-6 relative">
@@ -28,7 +28,7 @@ export default function CTA() {
           className="text-center mb-12"
         >
           <span className="text-accent-purple font-semibold uppercase tracking-widest">Let&apos;s Talk</span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold mt-4 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mt-4 mb-6">
             Ready to <span className="gradient-text">Grow</span>?
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">

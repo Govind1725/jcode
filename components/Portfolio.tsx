@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { ArrowRight, ExternalLink } from 'lucide-react'
 
 const projects = [
@@ -42,6 +42,15 @@ const projects = [
 
 export default function Portfolio() {
   const ref = useRef(null)
+  const [isMobile, setIsMobile] = useState(true)
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'end start'],
@@ -52,7 +61,7 @@ export default function Portfolio() {
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0])
 
   return (
-    <section id="portfolio" className="py-32 relative bg-surface/50 overflow-hidden" ref={ref}>
+    <section id="portfolio" className="py-20 md:py-32 relative bg-surface/50 overflow-hidden" ref={ref}>
       <motion.div style={{ opacity }} className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -71,7 +80,7 @@ export default function Portfolio() {
             </span>
           </motion.div>
           
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mt-4 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold mt-4 mb-6">
             Results That{' '}
             <motion.span
               className="gradient-text"
@@ -102,7 +111,7 @@ export default function Portfolio() {
               transition={{ delay: index * 0.15, duration: 0.6 }}
               whileHover={{ y: -10 }}
               className="group relative overflow-hidden rounded-2xl glass cursor-pointer"
-              style={{ y: index % 2 === 0 ? y1 : y2 }}
+              style={isMobile ? undefined : { y: index % 2 === 0 ? y1 : y2 }}
             >
               <div className="aspect-video relative overflow-hidden">
                 <motion.div
